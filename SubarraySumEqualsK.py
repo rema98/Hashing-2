@@ -11,14 +11,12 @@ class Solution:
         count = 0
         current_sum = 0
         prefix_counts = defaultdict(int)
-        prefix_counts[0] = 1  # Base case: one way to have sum = 0 before starting
+        prefix_counts[0] = 1 
         
         for num in nums:
             current_sum += num
-            # If (current_sum - k) has appeared before, any subarray ending here summing to k contributes that many times.
             if (current_sum - k) in prefix_counts:
                 count += prefix_counts[current_sum - k]
-            # Record the current prefix sum occurrence
             prefix_counts[current_sum] += 1
 
         return count

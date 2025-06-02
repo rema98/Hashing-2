@@ -14,8 +14,6 @@ class Solution:
                 length += 2
             else:
                 unmatched.add(c)
-
-        # If there's any character left unmatched, we can place exactly one in the center
         if unmatched:
             length += 1
 
